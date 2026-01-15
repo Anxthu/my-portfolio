@@ -130,6 +130,7 @@ nav.scrolled {
   color: var(--text-primary);
 }
 
+.logo-prefix,
 .logo-rest {
   font-family: var(--font-display);
   color: var(--text-secondary);
@@ -140,8 +141,15 @@ nav.scrolled {
   transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.nav-title:hover .logo-prefix {
+  max-width: 30px;
+  /* Space for "P " */
+  opacity: 1;
+}
+
 .nav-title:hover .logo-rest {
-  max-width: 100px;
+  max-width: 300px;
+  /* Increased for longer name */
   opacity: 1;
   color: var(--text-primary);
 }
