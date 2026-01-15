@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flowforge — P Ananthapadmanabhan Nair</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="flowforge.css">
+</head>
+
+<body>
+  <nav>
+    <div class="container nav-content">
+      <div class="nav-title">P Ananthapadmanabhan Nair</div>
+      <div class="nav-info">
+        <span>UI/UX Designer & Front-End Developer</span>
+        <span>Bengaluru, IN</span>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container project-page">
+    <section class="project-hero">
+      <h1 class="project-name">Flowforge</h1>
+      <p class="project-meta">React Component Playground — 2025</p>
+      <div class="hero-image"></div>
+    </section>
+
+    <section class="project-overview">
+      <h2>The Vision</h2>
+      <p>Flowforge bridges the gap between design and engineering. It's a sandboxed environment that allows teams to
+        test, visualize, and document React components interactively, ensuring that the "source of truth" is always the
+        code itself.</p>
+    </section>
+
+    <section class="project-overview">
+      <h2>The Problem</h2>
+      <p>Static documentation often drifts from the actual implementation. Flowforge solves this by rendering the live
+        component code, allowing designers to tweak props and see immediate results without needing to spin up a local
+        dev environment.</p>
+    </section>
+
+    <section class="project-details">
+      <div class="detail">
+        <h3>Role</h3>
+        <p>Frontend Engineering, Interaction Design</p>
+      </div>
+      <div class="detail">
+        <h3>Tools</h3>
+        <p>React, Vite, Framer Motion, AST Parser</p>
+      </div>
+      <div class="detail">
+        <h3>Impact</h3>
+        <p>Accelerated QA cycles by 50%</p>
+      </div>
+    </section>
+
+    <section class="project-highlights">
+      <h2>Technical Deep Dive</h2>
+      <p style="color: var(--p-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+        Flowforge uses a custom AST (Abstract Syntax Tree) parser to read component prop types and automatically
+        generate control panels.
+      </p>
+      <ul>
+        <li><strong>Bi-Directional Editing</strong>: changing a control updates the code; editing the code updates the
+          preview.</li>
+        <li><strong>Sandboxed Execution</strong>: Components run in an isolated iframe to prevent style leakage.</li>
+        <li><strong>Hot-Reload Architecture</strong>: Instant feedback loop powered by Vite's HMR API.</li>
+      </ul>
+    </section>
+
+    <section class="project-gallery">
+      <div class="gallery-item"></div>
+    </section>
+
+    <a href="index.html" class="back-link">← Back to Portfolio</a>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>

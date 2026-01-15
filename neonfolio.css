@@ -1,0 +1,165 @@
+/* Neonfolio Project Styles */
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+:root {
+    --p-accent: #ff4d00;
+    /* Vibrant Orange */
+    --p-bg: #0a0a0a;
+    --p-text: #ededed;
+    --p-text-muted: #888;
+    --font-pixel: 'Silkscreen', cursive;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+body {
+    background-color: var(--p-bg);
+    color: var(--p-text);
+}
+
+/* Override/Additions to base styles */
+.project-page {
+    padding-top: 8rem;
+    max-width: 1000px;
+}
+
+.project-hero {
+    margin-bottom: 3rem;
+    border-bottom: 1px solid #333;
+    padding-bottom: 4rem;
+}
+
+.project-name {
+    font-family: var(--font-pixel);
+    font-size: clamp(3rem, 8vw, 5rem);
+    line-height: 1;
+    color: var(--p-accent);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.project-meta {
+    font-family: var(--font-mono);
+    color: var(--p-text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.project-meta::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--p-accent);
+}
+
+.hero-image {
+    width: 100%;
+    height: 500px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    /* Placeholder pattern */
+    background-image: radial-gradient(#333 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+.project-overview {
+    margin-bottom: 3rem;
+}
+
+.project-overview h2,
+.project-highlights h2 {
+    font-family: var(--font-pixel);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: var(--p-text);
+}
+
+.project-overview p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--p-text-muted);
+    max-width: 800px;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    padding: 3rem;
+    border: 1px solid #333;
+    background: #111;
+}
+
+.detail h3 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--p-accent);
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+}
+
+.detail p {
+    font-size: 1.1rem;
+    color: var(--p-text);
+}
+
+.project-highlights ul {
+    list-style: none;
+    padding: 0;
+}
+
+.project-highlights li {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    color: var(--p-text-muted);
+}
+
+.project-highlights li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--p-accent);
+    font-family: var(--font-mono);
+}
+
+.project-gallery {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.gallery-item {
+    width: 100%;
+    height: 400px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
+
+.back-link {
+    display: inline-block;
+    font-family: var(--font-pixel);
+    color: var(--p-text);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-bottom: 4rem;
+    padding: 1rem 2rem;
+    border: 1px solid #333;
+    transition: all 0.2s;
+}
+
+.back-link:hover {
+    background: var(--p-accent);
+    color: #000;
+    border-color: var(--p-accent);
+}
