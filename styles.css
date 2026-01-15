@@ -117,14 +117,38 @@ nav.scrolled {
 }
 
 .nav-title {
-  font-weight: 600;
-  font-size: 1.125rem;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.1rem;
   letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  cursor: default;
+}
+
+.logo-initial {
+  color: var(--text-primary);
+}
+
+.logo-rest {
+  font-family: var(--font-display);
+  color: var(--text-secondary);
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-title:hover .logo-rest {
+  max-width: 100px;
+  opacity: 1;
+  color: var(--text-primary);
 }
 
 .nav-info {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   font-size: 0.875rem;
   color: var(--text-secondary);
 }
