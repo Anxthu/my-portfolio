@@ -710,6 +710,31 @@ footer {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
   }
+
+  /* Navbar Mobile */
+  .nav-info {
+    display: none;
+  }
+
+  .resume-btn {
+    display: none;
+    /* Optional: hide resume btn on very small screens if crowded, or keep */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text {
+    font-size: 1.75rem;
+  }
+
+  .nav-actions {
+    gap: 0.75rem;
+  }
+
+  .resume-btn {
+    display: none;
+    /* Hide resume on mobile to save space */
+  }
 }
 
 /* Footer Social Icons */
