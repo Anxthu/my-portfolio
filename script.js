@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       html: `I craft scalable <span>design systems</span> and <span>micro-interactions</span> that elevate brand value and drive <span>user engagement</span>.`
     },
     designers: {
-      html: `I obsess over <span>details</span>, <span>prototyping</span>, and the <span>hand-off</span> process to ensure the vision remains intact in code.`
+      html: `I’m a systems thinker with a high bar for quality. From process to pixels, I’ll collaborate with you, learn from you, and help make something we’re proud of.`
     },
     managers: {
       html: `I bring end-to-end product acumen, from vision and strategy to discovery and delivery. I’ll partner closely with you to generate the highest impact possible.`
