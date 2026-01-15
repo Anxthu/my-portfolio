@@ -33,8 +33,42 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     // Returning visit OR project page: Skip Animation
     if (loaderScreen) loaderScreen.style.display = 'none';
-    document.body.classList.add('loaded');
+
+    // Small delay to ensure the browser has painted, ensuring the transition triggers
+    requestAnimationFrame(() => {
+      document.body.classList.add('loaded');
+    });
   }
+
+  // --- Smooth Page Transition (Link Interception) ---
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      const href = link.getAttribute('href');
+
+      // Filter for internal links (ignoring anchors, mailto, etc.)
+      if (href &&
+        !href.startsWith('#') &&
+        !href.startsWith('mailto:') &&
+        !href.startsWith('tel:') &&
+        link.target !== '_blank') {
+
+        e.preventDefault();
+
+        // Add exit class
+        const mainContent = document.querySelector('.main-content');
+        if (mainContent) {
+          mainContent.classList.add('exiting');
+
+          // Wait for animation then navigate
+          setTimeout(() => {
+            window.location.href = href;
+          }, 400); // Matches CSS duration
+        } else {
+          window.location.href = href;
+        }
+      }
+    });
+  });
 
   // Navbar scroll effect
   const nav = document.querySelector("nav");

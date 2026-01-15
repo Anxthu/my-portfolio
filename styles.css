@@ -90,12 +90,7 @@ body {
 }
 
 /* New Wrapper Styling */
-.main-content {
-  opacity: 0;
-  transform: translateY(100px);
-  /* The "Slide from Below" effect requested */
-  transition: opacity 1s ease, transform 1s ease;
-}
+.main-content { opacity: 0; transform: translateY(20px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1); } .main-content.exiting { opacity: 0; transform: translateY(-20px); transition: opacity 0.4s ease, transform 0.4s ease; }
 
 body.loaded .main-content {
   opacity: 1;
@@ -952,3 +947,4 @@ footer::before {
 .next-project-link:hover > div:first-child > div:last-child {
   color: var(--accent) !important;
 }
+
