@@ -44,50 +44,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  cursor: none;
-}
-
-a,
-button,
-.magnetic {
-  cursor: none;
-}
-
-/* CUSTOM CURSOR (RETRO BLOCK) */
-.cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 24px;
-  background-color: var(--accent);
-  border-radius: 0;
-  /* Square block */
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.05s linear;
-  /* Snappy, no smooth lag */
-  mix-blend-mode: difference;
-}
-
-.cursor.active {
-  transform: translate(-50%, -50%) scale(1.5);
-  background-color: var(--text-primary);
-  /* Solid block on hover */
-  animation: blink 0.8s infinite;
-}
-
-@keyframes blink {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0;
-  }
 }
 
 /* UTILITIES */
