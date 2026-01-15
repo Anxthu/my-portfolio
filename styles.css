@@ -114,6 +114,32 @@ nav.scrolled {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  /* Context for absolute positioning */
+}
+
+.nav-info {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  position: absolute;
+  /* Take out of flow */
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  /* Ensure it stays in one line */
+  pointer-events: none;
+  /* Let clicks pass through if needed */
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* Push to right automatically due to flex space-between on parent, 
+     but since center is absolute, this works naturally with justify-content: space-between 
+     which puts first item left and last item right */
 }
 
 .nav-title {
