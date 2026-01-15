@@ -942,3 +942,13 @@ footer::before {
     gap: 0.5rem;
   }
 }
+/* Next Project Navigation Hover Values */
+.next-project-link:hover div:last-child {
+  background: var(--text-primary) !important;
+  color: var(--bg-primary) !important;
+  transform: scale(1.1);
+}
+
+.next-project-link:hover > div:first-child > div:last-child {
+  color: var(--accent) !important;
+}

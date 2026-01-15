@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found | P Ananthapadmanabhan Nair</title>
+    <meta name="robots" content="noindex, follow">
+    <link rel="icon" type="image/png" href="images/ANANTHU2.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .error-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        .error-code {
+            font-family: var(--font-mono);
+            font-size: clamp(4rem, 10vw, 8rem);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0;
+            line-height: 1;
+            position: relative;
+        }
+
+        .error-message {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .home-btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+        }
+
+        .home-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-content">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <p class="error-message">Looks like this page has drifted into the void.</p>
+            <a href="index.html" class="home-btn magnetic">Return Home</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
