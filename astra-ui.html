@@ -10,70 +10,124 @@
 </head>
 
 <body>
-  <nav>
-    <div class="container nav-content">
-      <div class="nav-title">P Ananthapadmanabhan Nair</div>
-      <div class="nav-info">
-        <span>UI/UX Designer & Front-End Developer</span>
-        <span>Bengaluru, IN</span>
+
+
+  <div class="main-content">
+    <nav>
+      <div class="container nav-content">
+        <div class="nav-title">
+          <span class="logo-prefix">P&nbsp;</span>
+          <span class="logo-initial">A</span>
+          <span class="logo-rest">nanthapadmanabhan Nair</span>
+        </div>
+        <div class="nav-info">
+          <span>UI/UX Designer & Front-End Developer</span>
+          <span id="time-status" class="time-status">Bengaluru, IN</span>
+        </div>
+        <div class="nav-actions">
+          <!-- Resume Button -->
+          <a href="myresume.pdf" target="_blank" class="resume-btn magnetic">Resume</a>
+
+          <!-- Theme Toggle -->
+          <button class="theme-toggle magnetic" id="theme-toggle" aria-label="Toggle Theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <!-- Sun Icon -->
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main class="container project-page">
-    <section class="project-hero">
-      <h1 class="project-name">Astra UI</h1>
-      <p class="project-meta">Custom Component Library — In Progress</p>
-      <div class="hero-image"></div>
-    </section>
+    <main class="container project-page">
+      <section class="project-hero">
+        <h1 class="project-name">Astra UI</h1>
+        <p class="project-meta">Custom Component Library — In Progress</p>
+        <div class="hero-image"></div>
+      </section>
 
-    <section class="project-overview">
-      <h2>The Vision</h2>
-      <p>Astra UI is a handcrafted component system optimized for motion-first React applications. It aims to be the
-        ultimate composable primitive layer, balancing flexibility with opinionated defaults for animation and
-        accessibility.</p>
-    </section>
+      <section class="project-overview">
+        <h2>The Vision</h2>
+        <p>Astra UI is a handcrafted component system optimized for motion-first React applications. It aims to be the
+          ultimate composable primitive layer, balancing flexibility with opinionated defaults for animation and
+          accessibility.</p>
+      </section>
 
-    <section class="project-overview">
-      <h2>The Approach</h2>
-      <p>Building a component library is about handling edge cases. Astra UI wraps headless primitives (like Radix UI)
-        to ensure full keyboard navigation and screen reader support, while exposing a simple styling API via Tailwind
-        classes.</p>
-    </section>
+      <section class="project-overview">
+        <h2>The Approach</h2>
+        <p>Building a component library is about handling edge cases. Astra UI wraps headless primitives (like Radix UI)
+          to ensure full keyboard navigation and screen reader support, while exposing a simple styling API via Tailwind
+          classes.</p>
+      </section>
 
-    <section class="project-details">
-      <div class="detail">
-        <h3>Role</h3>
-        <p>Frontend Development, System Architecture</p>
+      <section class="project-details">
+        <div class="detail">
+          <h3>Role</h3>
+          <p>Frontend Development, System Architecture</p>
+        </div>
+        <div class="detail">
+          <h3>Tools</h3>
+          <p>React, TypeScript, TailwindCSS, Radix UI</p>
+        </div>
+        <div class="detail">
+          <h3>Status</h3>
+          <p>v1.0 Beta</p>
+        </div>
+      </section>
+
+      <section class="project-highlights">
+        <h2>Technical Deep Dive</h2>
+        <p style="color: var(--p-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+          Astra UI is fully typed with TypeScript to provide excellent developer ergonomics and autocomplete.
+        </p>
+        <ul>
+          <li><strong>Headless Primitives</strong>: Decoupled logic from styling using Radix UI.</li>
+          <li><strong>Motion-First</strong>: Integrated Framer Motion for exit animations and layout transitions.</li>
+          <li><strong>Composable API</strong>: Designed using the Compound Component pattern for maximum flexibility.
+          </li>
+        </ul>
+      </section>
+
+      <section class="project-gallery">
+        <div class="gallery-item"></div>
+      </section>
+
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div>
+          <div style="margin-bottom: 1rem; color: var(--text-primary); font-weight: 600;">P Ananthapadmanabhan Nair
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">Last updated January
+            2026</div>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ananthapadmanabhan-nair/" target="_blank" aria-label="LinkedIn">
+            <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+          </a>
+          <a href="https://www.instagram.com/a_xnthu.93/" target="_blank" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://x.com/A_xnthu93" target="_blank" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter" class="social-icon">
+          </a>
+          <a href="mailto:ananthupublications@gmail.com">Email</a>
+        </div>
       </div>
-      <div class="detail">
-        <h3>Tools</h3>
-        <p>React, TypeScript, TailwindCSS, Radix UI</p>
-      </div>
-      <div class="detail">
-        <h3>Status</h3>
-        <p>v1.0 Beta</p>
-      </div>
-    </section>
-
-    <section class="project-highlights">
-      <h2>Technical Deep Dive</h2>
-      <p style="color: var(--p-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-        Astra UI is fully typed with TypeScript to provide excellent developer ergonomics and autocomplete.
-      </p>
-      <ul>
-        <li><strong>Headless Primitives</strong>: Decoupled logic from styling using Radix UI.</li>
-        <li><strong>Motion-First</strong>: Integrated Framer Motion for exit animations and layout transitions.</li>
-        <li><strong>Composable API</strong>: Designed using the Compound Component pattern for maximum flexibility.</li>
-      </ul>
-    </section>
-
-    <section class="project-gallery">
-      <div class="gallery-item"></div>
-    </section>
-
-    <a href="index.html" class="back-link">← Back to Portfolio</a>
-  </main>
+    </footer>
+  </div>
   <script src="script.js"></script>
 </body>
 

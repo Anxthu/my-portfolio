@@ -10,72 +10,126 @@
 </head>
 
 <body>
-  <nav>
-    <div class="container nav-content">
-      <div class="nav-title">P Ananthapadmanabhan Nair</div>
-      <div class="nav-info">
-        <span>UI/UX Designer & Front-End Developer</span>
-        <span>Bengaluru, IN</span>
+
+
+  <div class="main-content">
+    <nav>
+      <div class="container nav-content">
+        <div class="nav-title">
+          <span class="logo-prefix">P&nbsp;</span>
+          <span class="logo-initial">A</span>
+          <span class="logo-rest">nanthapadmanabhan Nair</span>
+        </div>
+        <div class="nav-info">
+          <span>UI/UX Designer & Front-End Developer</span>
+          <span id="time-status" class="time-status">Bengaluru, IN</span>
+        </div>
+        <div class="nav-actions">
+          <!-- Resume Button -->
+          <a href="myresume.pdf" target="_blank" class="resume-btn magnetic">Resume</a>
+
+          <!-- Theme Toggle -->
+          <button class="theme-toggle magnetic" id="theme-toggle" aria-label="Toggle Theme">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <!-- Sun Icon -->
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <main class="container project-page">
-    <section class="project-hero">
-      <h1 class="project-name">Flowforge</h1>
-      <p class="project-meta">React Component Playground — 2025</p>
-      <div class="hero-image"></div>
-    </section>
+    <main class="container project-page">
+      <section class="project-hero">
+        <h1 class="project-name">Flowforge</h1>
+        <p class="project-meta">React Component Playground — 2025</p>
+        <div class="hero-image"></div>
+      </section>
 
-    <section class="project-overview">
-      <h2>The Vision</h2>
-      <p>Flowforge bridges the gap between design and engineering. It's a sandboxed environment that allows teams to
-        test, visualize, and document React components interactively, ensuring that the "source of truth" is always the
-        code itself.</p>
-    </section>
+      <section class="project-overview">
+        <h2>The Vision</h2>
+        <p>Flowforge bridges the gap between design and engineering. It's a sandboxed environment that allows teams to
+          test, visualize, and document React components interactively, ensuring that the "source of truth" is always
+          the
+          code itself.</p>
+      </section>
 
-    <section class="project-overview">
-      <h2>The Problem</h2>
-      <p>Static documentation often drifts from the actual implementation. Flowforge solves this by rendering the live
-        component code, allowing designers to tweak props and see immediate results without needing to spin up a local
-        dev environment.</p>
-    </section>
+      <section class="project-overview">
+        <h2>The Problem</h2>
+        <p>Static documentation often drifts from the actual implementation. Flowforge solves this by rendering the live
+          component code, allowing designers to tweak props and see immediate results without needing to spin up a local
+          dev environment.</p>
+      </section>
 
-    <section class="project-details">
-      <div class="detail">
-        <h3>Role</h3>
-        <p>Frontend Engineering, Interaction Design</p>
+      <section class="project-details">
+        <div class="detail">
+          <h3>Role</h3>
+          <p>Frontend Engineering, Interaction Design</p>
+        </div>
+        <div class="detail">
+          <h3>Tools</h3>
+          <p>React, Vite, Framer Motion, AST Parser</p>
+        </div>
+        <div class="detail">
+          <h3>Impact</h3>
+          <p>Accelerated QA cycles by 50%</p>
+        </div>
+      </section>
+
+      <section class="project-highlights">
+        <h2>Technical Deep Dive</h2>
+        <p style="color: var(--p-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
+          Flowforge uses a custom AST (Abstract Syntax Tree) parser to read component prop types and automatically
+          generate control panels.
+        </p>
+        <ul>
+          <li><strong>Bi-Directional Editing</strong>: changing a control updates the code; editing the code updates the
+            preview.</li>
+          <li><strong>Sandboxed Execution</strong>: Components run in an isolated iframe to prevent style leakage.</li>
+          <li><strong>Hot-Reload Architecture</strong>: Instant feedback loop powered by Vite's HMR API.</li>
+        </ul>
+      </section>
+
+      <section class="project-gallery">
+        <div class="gallery-item"></div>
+      </section>
+
+      <a href="index.html" class="back-link">← Back to Portfolio</a>
+    </main>
+
+    <footer>
+      <div class="container footer-content">
+        <div>
+          <div style="margin-bottom: 1rem; color: var(--text-primary); font-weight: 600;">P Ananthapadmanabhan Nair
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">Last updated January
+            2026</div>
+        </div>
+
+        <div class="footer-links">
+          <a href="https://www.linkedin.com/in/ananthapadmanabhan-nair/" target="_blank" aria-label="LinkedIn">
+            <img src="images/linkedin.png" alt="LinkedIn" class="social-icon">
+          </a>
+          <a href="https://www.instagram.com/a_xnthu.93/" target="_blank" aria-label="Instagram">
+            <img src="images/instagram.png" alt="Instagram" class="social-icon">
+          </a>
+          <a href="https://x.com/A_xnthu93" target="_blank" aria-label="Twitter">
+            <img src="images/twitter.png" alt="Twitter" class="social-icon">
+          </a>
+          <a href="mailto:ananthupublications@gmail.com">Email</a>
+        </div>
       </div>
-      <div class="detail">
-        <h3>Tools</h3>
-        <p>React, Vite, Framer Motion, AST Parser</p>
-      </div>
-      <div class="detail">
-        <h3>Impact</h3>
-        <p>Accelerated QA cycles by 50%</p>
-      </div>
-    </section>
-
-    <section class="project-highlights">
-      <h2>Technical Deep Dive</h2>
-      <p style="color: var(--p-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-        Flowforge uses a custom AST (Abstract Syntax Tree) parser to read component prop types and automatically
-        generate control panels.
-      </p>
-      <ul>
-        <li><strong>Bi-Directional Editing</strong>: changing a control updates the code; editing the code updates the
-          preview.</li>
-        <li><strong>Sandboxed Execution</strong>: Components run in an isolated iframe to prevent style leakage.</li>
-        <li><strong>Hot-Reload Architecture</strong>: Instant feedback loop powered by Vite's HMR API.</li>
-      </ul>
-    </section>
-
-    <section class="project-gallery">
-      <div class="gallery-item"></div>
-    </section>
-
-    <a href="index.html" class="back-link">← Back to Portfolio</a>
-  </main>
+    </footer>
+  </div>
   <script src="script.js"></script>
 </body>
 

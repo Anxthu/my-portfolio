@@ -5,25 +5,29 @@ document.addEventListener("DOMContentLoaded", () => {
   const loaderScreen = document.querySelector('.loader-screen');
   const loaderText = document.querySelector('.loader-text-container');
 
-  // Simulate load time (adjust as needed)
-  setTimeout(() => {
-    // 1. Fade out text
-    if (loaderText) loaderText.classList.add('fade-out');
-
+  if (loaderScreen) {
+    // Simulate load time (adjust as needed)
     setTimeout(() => {
-      // 2. Slide up curtain
-      if (loaderScreen) loaderScreen.classList.add('exit');
+      // 1. Fade out text
+      if (loaderText) loaderText.classList.add('fade-out');
 
-      // 3. Reveal body (slide in effect handled by CSS on body.loaded)
-      document.body.classList.add('loaded');
-
-      // Cleanup (optional, remove form DOM after animation)
       setTimeout(() => {
-        if (loaderScreen) loaderScreen.style.display = 'none';
-      }, 1000); // Wait for transition
+        // 2. Slide up curtain
+        loaderScreen.classList.add('exit');
 
-    }, 500); // Wait for text fade
-  }, 2000); // Initial delay
+        // 3. Reveal body (slide in effect handled by CSS on body.loaded)
+        document.body.classList.add('loaded');
+
+        // Cleanup
+        setTimeout(() => {
+          loaderScreen.style.display = 'none';
+        }, 1000); // Wait for transition
+      }, 500); // Wait for text fade
+    }, 2000); // Initial delay
+  } else {
+    // If no loader screen (e.g., inner pages), show content immediately
+    document.body.classList.add('loaded');
+  }
 
   // Navbar scroll effect
   const nav = document.querySelector("nav");
