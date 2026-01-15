@@ -44,6 +44,13 @@ All project pages follow a consistent, premium "Design Engineer" aesthetic with 
     ```
 2.  Open `index.html` in any modern browser.
 
+## ⚖️ License & Usage
+
+All rights reserved. This portfolio is designed and built by **P Ananthapadmanabhan Nair**.
+
+- **Feel free to:** Explore the code, fork the repository to understand the architecture, and use it as a reference for your own learning.
+- **Please do not:** Clone this site, change the name, and host it as your own. The design system, copy, and specific implementation details are the intellectual property of the author.
+
 ## 📫 Connect
 
 - **LinkedIn:** [P Ananthapadmanabhan Nair](https://www.linkedin.com/in/ananthapadmanabhan-nair/)
