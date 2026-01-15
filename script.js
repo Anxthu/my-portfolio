@@ -138,4 +138,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // --- Interactive Hero Content ---
+  const heroText = document.querySelector('.hero-text');
+  const audienceOptions = document.querySelectorAll('.audience-list span');
+
+  const contentData = {
+    anyone: {
+      html: `I design and build digital experiences with the belief that technology should feel <span>thoughtful</span>, <span>expressive</span>, and <span>human</span>.`
+    },
+    recruiters: {
+      html: `I bridge the gap between <span>design</span> and <span>engineering</span> to ship pixel-perfect products that <span>scale</span>.`
+    },
+    directors: {
+      html: `I craft scalable <span>design systems</span> and <span>micro-interactions</span> that elevate brand value and drive <span>user engagement</span>.`
+    },
+    designers: {
+      html: `I obsess over <span>details</span>, <span>prototyping</span>, and the <span>hand-off</span> process to ensure the vision remains intact in code.`
+    },
+    managers: {
+      html: `I focus on <span>usability</span>, <span>visual hierarchy</span>, and fast iteration cycles to validate hypotheses and hit <span>KPIs</span>.`
+    },
+    engineers: {
+      html: `I write clean, semantic <span>HTML/CSS</span> and maintainable <span>React</span> components that are easy to integrate and <span>extend</span>.`
+    }
+  };
+
+  const defaultSuffix = `<br><br>Currently exploring the intersection of design and AI at <a href="https://www.amrita.edu/program/btech-in-artificial-intelligence-and-data-science/" target="_blank">Amrita Vishwa Vidyapeetham</a>.`;
+
+  audienceOptions.forEach(option => {
+    option.addEventListener('click', () => {
+      // Update active state
+      audienceOptions.forEach(opt => opt.classList.remove('active'));
+      option.classList.add('active');
+
+      // Get target key
+      const target = option.getAttribute('data-target');
+      const newContent = contentData[target];
+
+      if (newContent) {
+        // Animate content switch
+        heroText.style.opacity = '0';
+        heroText.style.transform = 'translateY(10px)';
+
+        setTimeout(() => {
+          heroText.innerHTML = newContent.html + defaultSuffix;
+          heroText.style.opacity = '1';
+          heroText.style.transform = 'translateY(0)';
+        }, 300);
+      }
+    });
+  });
+
 });
