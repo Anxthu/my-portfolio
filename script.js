@@ -1,7 +1,29 @@
 // Scroll Animations using Intersection Observer
 document.addEventListener("DOMContentLoaded", () => {
-  // Fade in body
-  document.body.style.opacity = "1";
+
+  // --- Loading Screen Logic ---
+  const loaderScreen = document.querySelector('.loader-screen');
+  const loaderText = document.querySelector('.loader-text-container');
+
+  // Simulate load time (adjust as needed)
+  setTimeout(() => {
+    // 1. Fade out text
+    if (loaderText) loaderText.classList.add('fade-out');
+
+    setTimeout(() => {
+      // 2. Slide up curtain
+      if (loaderScreen) loaderScreen.classList.add('exit');
+
+      // 3. Reveal body (slide in effect handled by CSS on body.loaded)
+      document.body.classList.add('loaded');
+
+      // Cleanup (optional, remove form DOM after animation)
+      setTimeout(() => {
+        if (loaderScreen) loaderScreen.style.display = 'none';
+      }, 1000); // Wait for transition
+
+    }, 500); // Wait for text fade
+  }, 2000); // Initial delay
 
   // Navbar scroll effect
   const nav = document.querySelector("nav");

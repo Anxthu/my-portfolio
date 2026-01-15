@@ -32,10 +32,52 @@
   box-sizing: border-box;
 }
 
+/* LOADING SCREEN */
+.loader-screen {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  /* Left aligned as requested */
+  transition: transform 1s cubic-bezier(0.87, 0, 0.13, 1);
+  /* Curtained ease */
+}
+
+.loader-text-container {
+  font-family: var(--font-display);
+  color: #888;
+  /* Muted grey */
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.loader-name {
+  color: #fff;
+  font-weight: 500;
+}
+
+.loader-role {
+  color: #666;
+}
+
+.loader-screen.exit {
+  transform: translateY(-100%);
+  /* Slide UP */
+}
+
+.loader-text-container.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
+/* Base body hidden initially to allow slide-in effect */
 body {
   font-family: var(--font-main);
   background-color: var(--bg-primary);
@@ -44,6 +86,24 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  /* Removed body-level opacity & overflow hidden to keep Loader visible */
+}
+
+/* New Wrapper Styling */
+.main-content {
+  opacity: 0;
+  transform: translateY(100px);
+  /* The "Slide from Below" effect requested */
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+body.loaded .main-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.loaded {
+  overflow-y: auto;
 }
 
 /* UTILITIES */
