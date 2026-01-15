@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thinkspace — P Ananthapadmanabhan Nair</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="thinkspace.css" />
+  <!-- Removed thinkspace.css to use global design system -->
 </head>
 
 <body>
-
+  <!-- Loader handled by script.js checking for absence of .loader-screen -->
 
   <div class="main-content">
     <!-- Navigation -->
@@ -26,14 +26,10 @@
           <span id="time-status" class="time-status">Bengaluru, IN</span>
         </div>
         <div class="nav-actions">
-          <!-- Resume Button -->
           <a href="myresume.pdf" target="_blank" class="resume-btn magnetic">Resume</a>
-
-          <!-- Theme Toggle -->
           <button class="theme-toggle magnetic" id="theme-toggle" aria-label="Toggle Theme">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
-              <!-- Sun Icon -->
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -49,78 +45,102 @@
       </div>
     </nav>
 
-    <main class="container project-page">
-      <section class="project-hero">
-        <h1 class="project-name">Thinkspace</h1>
-        <p class="project-meta">AI-Driven Interface Design — 2025</p>
-        <div class="hero-image"></div>
-      </section>
+    <main class="project-page">
+      <!-- 1. Hero Header -->
+      <header class="project-header">
+        <h1 class="project-title">Thinkspace</h1>
+        <p class="project-subtitle">AI-Driven Interface Design — 2025</p>
+      </header>
 
-      <section class="project-overview">
-        <h2>The Vision</h2>
-        <p>
-          Thinkspace isn't just a design tool; it's a thinking partner. It explores how interfaces can adapt
-          intelligently
-          to user behavior and context, integrating AI-driven layouts and conversational design patterns. This project
-          investigates how digital tools can feel more expressive, flexible, and human.
-        </p>
-      </section>
+      <!-- 2. Hero Media -->
+      <div class="project-hero-media">
+        <!-- Placeholder for hero image, using CSS bg for now -->
+      </div>
 
-      <section class="project-overview">
-        <h2>The Challenge</h2>
-        <p>
-          Traditional design tools are static. They require designers to manually translate abstract ideas into concrete
-          pixels, often losing the nuance of the original thought in the process. The cognitive load of managing layers,
-          constraints, and tokens can stifle creativity.
-        </p>
-      </section>
-
-      <section class="project-overview">
-        <h2>The Solution</h2>
-        <p>
-          Thinkspace introduces a "liquid interface" engine. Instead of fixed canvases, the workspace adapts to the
-          designer's intent. If you're brainstorming, it offers an infinite whiteboard. If you're refining, it tightens
-          into a structured grid. An embedded LLM acts as a co-pilot, suggesting layout variations and color harmonies
-          in
-          real-time.
-        </p>
-      </section>
-
-      <section class="project-details">
-        <div class="detail">
-          <h3>Role</h3>
-          <p>Product Design, Prototyping, Frontend Development</p>
+      <!-- 3. Stats Grid -->
+      <section class="project-stats">
+        <div class="stat-card">
+          <div class="stat-label">Role</div>
+          <div class="stat-value">Product Design<br>Prototyping<br>Frontend Dev</div>
         </div>
-        <div class="detail">
-          <h3>Tools</h3>
-          <p>Figma, Framer, React, OpenAI API</p>
+        <div class="stat-card">
+          <div class="stat-label">Tools</div>
+          <div class="stat-value">Figma, Framer<br>React, OpenAI API</div>
         </div>
-        <div class="detail">
-          <h3>Timeline</h3>
-          <p>8 Weeks</p>
+        <div class="stat-card">
+          <div class="stat-label">Timeline</div>
+          <div class="stat-value">8 Weeks<br>Sprint Q1 2025</div>
         </div>
       </section>
 
-      <section class="project-highlights">
-        <h2>Technical Deep Dive</h2>
-        <p style="color: var(--p-text-muted); font-size: 1.1rem; margin-bottom: 2rem;">
-          Built on a custom React renderer, Thinkspace leverages the OpenAI API for semantic understanding of user
-          prompts. The layout engine uses a constraint-based solver to generate responsive compositions on the fly.
-        </p>
-        <ul>
-          <li><strong>Adaptive Layout Engine</strong>: Uses Cassowary constraint solver for real-time UI generation.
-          </li>
-          <li><strong>Semantic Intent</strong>: GPT-4 integration to translate natural language into design tokens.</li>
-          <li><strong>Local-First Sync</strong>: CRDT-based state management for zero-latency collaboration.</li>
-        </ul>
-      </section>
+      <!-- 4. Main Content -->
+      <article class="project-content">
 
-      <section class="project-gallery">
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-      </section>
+        <div class="section-block">
+          <h2 class="section-title">The Vision</h2>
+          <p class="section-text">
+            Thinkspace isn't just a design tool; it's a thinking partner. It explores how interfaces can adapt
+            intelligently to user behavior and context, integrating AI-driven layouts and conversational design
+            patterns.
+          </p>
+        </div>
 
-      <a href="index.html" class="back-link">← Back to Portfolio</a>
+        <div class="section-block">
+          <h2 class="section-title">The Challenge</h2>
+          <p class="section-text">
+            Traditional design tools are static. They require designers to manually translate abstract ideas into
+            concrete
+            pixels, often losing the nuance of the original thought in the process. The cognitive load of managing
+            layers,
+            constraints, and tokens can stifle creativity.
+          </p>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">The Solution</h2>
+          <p class="section-text">
+            Thinkspace introduces a "liquid interface" engine. Instead of fixed canvases, the workspace adapts to the
+            designer's intent. If you're brainstorming, it offers an infinite whiteboard. If you're refining, it
+            tightens
+            into a structured grid. An embedded LLM acts as a co-pilot, suggesting layout variations and color harmonies
+            in real-time.
+          </p>
+        </div>
+
+        <div class="section-block">
+          <h2 class="section-title">Technical Deep Dive</h2>
+          <p class="section-text">
+            Built on a custom React renderer, Thinkspace leverages the OpenAI API for semantic understanding of user
+            prompts. The layout engine uses a constraint-based solver to generate responsive compositions on the fly.
+          </p>
+          <ul class="highlights-list">
+            <li>
+              <strong>Adaptive Engine</strong>
+              <span>Uses Cassowary constraint solver for real-time UI generation.</span>
+            </li>
+            <li>
+              <strong>Semantic Intent</strong>
+              <span>GPT-4 integration to translate natural language into design tokens.</span>
+            </li>
+            <li>
+              <strong>Local-First</strong>
+              <span>CRDT-based state management for zero-latency collaboration.</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Gallery -->
+        <h2 class="section-title">Gallery</h2>
+        <div class="project-gallery">
+          <div class="gallery-img" style="height: 400px;"></div>
+          <div class="gallery-img" style="height: 400px;"></div>
+        </div>
+
+        <a href="index.html"
+          style="display: inline-block; margin-top: 2rem; color: var(--text-primary); text-decoration: none; border-bottom: 1px solid var(--border);">←
+          Back to Portfolio</a>
+      </article>
+
     </main>
 
     <!-- Footer -->

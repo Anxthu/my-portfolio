@@ -752,3 +752,170 @@ footer {
   opacity: 1;
   transform: translateY(-2px);
 }
+
+/* =========================================
+   PROJECT PAGE DESIGN SYSTEM
+   ========================================= */
+
+.project-page {
+  padding-top: 8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: slideUp 0.8s var(--ease-out) forwards;
+}
+
+/* 1. Project Hero */
+.project-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.project-title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.project-subtitle {
+  font-family: var(--font-mono);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* 2. Visuals */
+.project-hero-media {
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  background-color: var(--bg-secondary);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  margin-bottom: 4rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+/* 3. Stats Grid (Bento Style) */
+.project-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 6rem;
+}
+
+.stat-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: var(--text-muted);
+}
+
+.stat-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.stat-value {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* 4. Content Typography */
+.project-content {
+  max-width: 800px;
+  margin: 0 auto 6rem auto;
+}
+
+.section-block {
+  margin-bottom: 5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.section-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* 5. Highlights List */
+.highlights-list {
+  list-style: none;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.highlights-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.highlights-list strong {
+  color: var(--text-primary);
+  min-width: 150px;
+}
+
+/* 6. Gallery */
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gallery-img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-page {
+    padding-top: 6rem;
+  }
+
+  .project-hero-media {
+    height: 40vh;
+  }
+
+  .highlights-list li {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
