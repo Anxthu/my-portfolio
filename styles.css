@@ -230,6 +230,7 @@ nav.scrolled {
   letter-spacing: -0.03em;
   margin-top: -0.5rem;
   /* Align top with sidebar */
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .hero-text span {
