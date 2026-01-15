@@ -1,6 +1,0 @@
-| Card Type               | Grid Columns | Grid Rows | Approx Pixel Size (Desktop) |
-| ----------------------- | ------------ | --------- | --------------------------- |
-| `.bento-card` (default) | 2            | 1         |   ≈ 460 × 180 px            |
-| `.bento-card.wide`      | 4            | 1         |   ≈ 940 × 180 px            |
-| `.bento-card.tall`      | 2            | 2         |   ≈ 460 × 380 px            |
-| `.bento-card.large`     | 3            | 2         |   ≈ 700 × 380 px            |
