@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
       html: `I obsess over <span>details</span>, <span>prototyping</span>, and the <span>hand-off</span> process to ensure the vision remains intact in code.`
     },
     managers: {
-      html: `I focus on <span>usability</span>, <span>visual hierarchy</span>, and fast iteration cycles to validate hypotheses and hit <span>KPIs</span>.`
+      html: `I bring end-to-end product acumen, from vision and strategy to discovery and delivery. I’ll partner closely with you to generate the highest impact possible.`
     },
     engineers: {
       html: `I’m {highly_technical} and while (I’m = engineer) I know my way /around & can speak “fluently” with you; I built <a href="index.html" style="color: var(--text-primary); text-decoration: underline;">(this.site)</a> from scratch.`
