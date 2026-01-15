@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
       html: `I bridge the gap between <span>design</span> and <span>engineering</span> to ship pixel-perfect products that <span>scale</span>.`
     },
     directors: {
-      html: `I craft scalable <span>design systems</span> and <span>micro-interactions</span> that elevate brand value and drive <span>user engagement</span>.`
+      html: `I take pride in my craft, I develop cross functional partnerships, and thrive in complex, ambiguous environments.`
     },
     designers: {
       html: `I’m a systems thinker with a high bar for quality. From process to pixels, I’ll collaborate with you, learn from you, and help make something we’re proud of.`
