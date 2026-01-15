@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const loaderScreen = document.querySelector('.loader-screen');
   const loaderText = document.querySelector('.loader-text-container');
 
-  if (loaderScreen) {
-    // Simulate load time (adjust as needed)
+  // Check if we've already shown the intro in this session
+  const hasSeenIntro = sessionStorage.getItem('hasSeenIntro');
+
+  if (loaderScreen && !hasSeenIntro) {
+    // First visit: Play Animation
     setTimeout(() => {
       // 1. Fade out text
       if (loaderText) loaderText.classList.add('fade-out');
@@ -15,17 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Slide up curtain
         loaderScreen.classList.add('exit');
 
-        // 3. Reveal body (slide in effect handled by CSS on body.loaded)
+        // 3. Reveal body
         document.body.classList.add('loaded');
+
+        // Mark as seen
+        sessionStorage.setItem('hasSeenIntro', 'true');
 
         // Cleanup
         setTimeout(() => {
           loaderScreen.style.display = 'none';
-        }, 1000); // Wait for transition
-      }, 500); // Wait for text fade
-    }, 2000); // Initial delay
+        }, 1000);
+      }, 500);
+    }, 2000);
   } else {
-    // If no loader screen (e.g., inner pages), show content immediately
+    // Returning visit OR project page: Skip Animation
+    if (loaderScreen) loaderScreen.style.display = 'none';
     document.body.classList.add('loaded');
   }
 
