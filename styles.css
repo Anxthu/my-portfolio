@@ -13,6 +13,17 @@
   --font-main: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', 'Consolas', monospace;
   --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --theme-toggle-size: 40px;
+}
+
+[data-theme="light"] {
+  --bg-primary: #f0f0f0;
+  --bg-secondary: #ffffff;
+  --text-primary: #18181b;
+  --text-secondary: #52525b;
+  --text-muted: #71717a;
+  --border: #e4e4e7;
+  --border-light: rgba(0, 0, 0, 0.08);
 }
 
 * {
@@ -116,6 +127,50 @@ nav.scrolled {
   gap: 2rem;
   font-size: 0.875rem;
   color: var(--text-secondary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* THEME TOGGLE */
+.theme-toggle {
+  width: var(--theme-toggle-size);
+  height: var(--theme-toggle-size);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* RESUME BUTTON */
+.resume-btn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: var(--bg-secondary);
+  transition: all 0.2s ease;
+}
+
+.resume-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 /* HERO / ABOUT SECTION */
