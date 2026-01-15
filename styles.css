@@ -455,6 +455,59 @@ nav.scrolled {
   box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
 }
 
+/* Spotlight Glow */
+.bento-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.bento-grid:hover .bento-card::after {
+  opacity: 1;
+}
+
+/* Time Status */
+.time-status {
+  font-family: var(--font-mono);
+}
+
+.time-status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #22c55e;
+  border-radius: 50%;
+  margin-right: 6px;
+  animation: pulse 2s infinite;
+}
+
+.time-status.offline .time-status-dot {
+  background-color: #f59e0b;
+  /* Amber for snoozing */
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
 .bento-card:hover::before {
   opacity: 0.8;
 }

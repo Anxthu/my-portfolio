@@ -211,4 +211,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // --- 1. Spotlight Grid Effect ---
+  const bentoGrid = document.querySelector('.bento-grid');
+  if (bentoGrid) {
+    bentoGrid.addEventListener('mousemove', (e) => {
+      document.querySelectorAll('.bento-card').forEach(card => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', `${x}px`);
+        card.style.setProperty('--mouse-y', `${y}px`);
+      });
+    });
+  }
+
+  // --- 2. Live Time Status ---
+  function updateTime() {
+    const timeStatus = document.getElementById('time-status');
+    if (!timeStatus) return;
+
+    const options = { timeZone: 'Asia/Kolkata', hour: 'numeric', minute: '2-digit', hour12: true };
+    const formatter = new Intl.DateTimeFormat('en-US', options);
+    const now = new Date();
+    const timeString = formatter.format(now);
+
+    const hour = parseInt(now.toLocaleTimeString('en-US', { timeZone: 'Asia/Kolkata', hour: 'numeric', hour12: false }));
+
+    // Status Logic: 8 AM - 10 PM is "Online", else "Snoozing"
+    const isOnline = hour >= 8 && hour < 22;
+    const statusText = isOnline ? "Open to work" : "Snoozing";
+    const statusClass = isOnline ? "online" : "offline";
+
+    timeStatus.innerHTML = `
+      <span>Bengaluru, IN</span>
+      <span class="separator" style="margin: 0 8px; opacity: 0.3;">|</span>
+      <span class="time-status-dot"></span>
+      <span style="font-variant-numeric: tabular-nums;">${timeString}</span>
+    `;
+
+    // Toggle class for dot color
+    timeStatus.className = `time-status ${statusClass}`;
+  }
+
+  // Initialize and update every minute
+  updateTime();
+  setInterval(updateTime, 60000);
+
 });
