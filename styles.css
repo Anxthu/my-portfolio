@@ -85,16 +85,19 @@ body {
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  /* Removed body-level opacity & overflow hidden to keep Loader visible */
-
-  /* Swiss/Brutalist Grid */
-  background-size: 25% 250px;
+  /* Asymmetrical Swiss Grid */
+  background-size: 100% 100vh, 100% 250px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    /* Vertical Lines (Uneven) */
+    linear-gradient(to right,
+      transparent 25%, rgba(255, 255, 255, 0.08) 25%, rgba(255, 255, 255, 0.08) 25.1%,
+      transparent 25.1%, transparent 62%, rgba(255, 255, 255, 0.08) 62%, rgba(255, 255, 255, 0.08) 62.1%,
+      transparent 62.1%, transparent 90%, rgba(255, 255, 255, 0.08) 90%, rgba(255, 255, 255, 0.08) 90.1%,
+      transparent 90.1%),
+    /* Horizontal Lines (Regular Rhythm) */
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-attachment: fixed;
-  /* Keeps grid static while scrolling */
+  background-repeat: no-repeat, repeat-y;
 }
 
 /* New Wrapper Styling */
