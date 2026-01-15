@@ -114,4 +114,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // --- Custom Cursor Logic ---
+  const cursor = document.querySelector('.cursor');
+
+  if (cursor) {
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+    });
+
+    // Hover effect for links and buttons
+    const interactiveElements = document.querySelectorAll('a, button, .magnetic');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('active'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('active'));
+    });
+  }
+
+  // --- Magnetic Button Logic ---
+  const magneticElements = document.querySelectorAll('.magnetic');
+
+  magneticElements.forEach(el => {
+    el.addEventListener('mousemove', (e) => {
+      const rect = el.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+
+      // Magnetic strength
+      const strength = 0.5;
+      el.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+    });
+
+    el.addEventListener('mouseleave', () => {
+      el.style.transform = 'translate(0, 0)';
+      // Add a quick transition for snap back, then remove it so it's instant on mousemove
+      el.style.transition = 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      setTimeout(() => {
+        el.style.transition = '';
+      }, 300);
+    });
+  });
+
 });
