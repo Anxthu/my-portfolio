@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <span>Bengaluru, IN</span>
       <span class="separator" style="margin: 0 8px; opacity: 0.3;">|</span>
       <span class="time-status-dot"></span>
-      <span style="font-variant-numeric: tabular-nums;">${timeString}</span>
+      <span>${statusText}</span>
     `;
 
     // Toggle class for dot color
