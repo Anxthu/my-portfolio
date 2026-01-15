@@ -37,13 +37,19 @@
 </head>
 
 <body>
-  <!-- Loader -->
   <div class="loader-screen">
     <div class="loader-text-container">
       <div class="loader-name">P Ananthapadmanabhan Nair</div>
       <div class="loader-role">&mdash; Design Engineer</div>
     </div>
   </div>
+  <script>
+    // Inline script to prevent FOUC (Flash of Unstyled Content)
+    if (sessionStorage.getItem('hasSeenIntro')) {
+      document.querySelector('.loader-screen').style.display = 'none';
+      document.body.classList.add('loaded');
+    }
+  </script>
 
   <div class="main-content">
     <!-- Navigation -->
