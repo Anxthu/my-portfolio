@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
       html: `I focus on <span>usability</span>, <span>visual hierarchy</span>, and fast iteration cycles to validate hypotheses and hit <span>KPIs</span>.`
     },
     engineers: {
-      html: `I write clean, semantic <span>HTML/CSS</span> and maintainable <span>React</span> components that are easy to integrate and <span>extend</span>.`
+      html: `I’m {highly_technical} and while (I’m = engineer) I know my way /around & can speak “fluently” with you; I built <a href="index.html" style="color: var(--text-primary); text-decoration: underline;">(this.site)</a> from scratch.`
     }
   };
 
