@@ -753,6 +753,10 @@ footer {
   transform: translateY(-2px);
 }
 
+[data-theme="light"] .social-icon {
+  filter: invert(0);
+}
+
 /* =========================================
    PROJECT PAGE DESIGN SYSTEM
    ========================================= */
