@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
       html: `I design and build digital experiences with the belief that technology should feel <span>thoughtful</span>, <span>expressive</span>, and <span>human</span>.`
     },
     recruiters: {
-      html: `I bridge the gap between <span>design</span> and <span>engineering</span> to ship pixel-perfect products that <span>scale</span>.`
+      html: `I may be early in my career, but I’m ambitious, adaptable, and ready to ship. I’m looking for a team where I can contribute immediately and grow fast.`
     },
     directors: {
       html: `I take pride in my craft, I develop cross functional partnerships, and thrive in complex, ambiguous environments.`
