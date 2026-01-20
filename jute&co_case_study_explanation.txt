@@ -1,0 +1,60 @@
+# Project Case Study: Sustainable Jute E-commerce Platform
+
+## 1. Project Overview
+This project is a high-end, aesthetic e-commerce web application designed for a sustainable fashion brand ("Jute & Co."). It focuses on delivering a premium user experience through smooth animations, interactive 3D elements, and a clean, minimalist design. The application is built as a Single Page Application (SPA) to ensure seamless navigation and instant feedback.
+
+## 2. Technology Stack
+The project leverages a modern frontend stack optimized for performance and visual fidelity:
+
+*   **Core Framework:** React 19 (via Vite) - Uses the latest React features for efficient rendering.
+*   **Routing:** React Router DOM v7 - Handles client-side routing for seamless page transitions without reloads.
+*   **Styling:** Tailwind CSS v4 - Utility-first CSS framework for rapid, responsive, and maintainable styling.
+*   **Animations & Interactions:**
+    *   **Framer Motion:** Powers the complex scroll-based animations, page transitions, and the 3D carousel effects.
+    *   **Three.js / React Globe GL:** Integrated for advanced 3D visualizations (e.g., globe or product views).
+*   **Icons:** Lucide React - Lightweight, consistent icon set.
+
+## 3. Architecture & Data Flow
+The application follows a component-based architecture with centralized state management for global features like the shopping cart.
+
+### Key Architectural Patterns:
+*   **Context API for State Management:**
+    *   `CartContext.jsx`: wraps the application to provide global access to cart state (`cartItems`, `addToCart`, `removeFromCart`). This eliminates "prop drilling" and ensures the cart updates instantly across the Navbar, Product Pages, and Checkout.
+*   **Component-Based UI:**
+    *   **Atomic Design:** Small, reusable components like `ProductCard`, `Navbar`, and `Footer` are composed to build complex pages.
+    *   **Layouts:** A common layout wrapper in `App.jsx` ensures the Navbar and Footer persist across all routes.
+*   **Data Handling:**
+    *   Currently, product data is served statically from `src/data/products.js` to simulate an API response, ensuring fast load times for the prototype.
+    *   Images are optimized and stored in `src/assets`.
+
+## 4. Key Features & Implementation Details
+
+### A. Immersive 3D Carousel (`ThreeDCarousel.jsx`)
+One of the standout features is the scroll-driven 3D product carousel.
+*   **Technique:** It uses `framer-motion`'s `useScroll` and `useTransform` hooks to map the user's vertical scroll position to 3D rotation values (`rotateY`).
+*   **Effect:** As the user scrolls down, the carousel rotates, scaling and fading elements in creating a "scrollytelling" experience. CSS 3D transforms (`preserve-3d`) are used to position cards in a circle.
+
+### B. Dynamic Product Filtering & Sorting (`Hero.jsx`)
+The Hero component isn't just a banner; it acts as a control center.
+*   **Stateful Filters:** Uses local React state (`useState`) to toggle dropdowns for "Sort By" (Price: Low-High, etc.) and "Price Filters".
+*   **Design:** CustomDropdowns are implemented from scratch using Tailwind for a polished look, avoiding default browser select boxes.
+
+### C. Seamless Shopping Cart
+*   **Real-time Updates:** The `CartContext` calculates totals dynamically using `reduce`.
+*   **Persistency:** The state logic handles duplicate items intelligently (incrementing quantity instead of adding duplicates) and supports removing items or updating quantities directly from the cart slide-out or page.
+
+## 5. Folder Structure
+The project is organized for scalability:
+
+*   `src/components/`: Reusable UI blocks (e.g., `Navbar`, `ProductCard`, `SearchOverlay`).
+*   `src/pages/`: Full page views corresponding to routes (e.g., `Home`, `Men`, `ProductDetails`).
+*   `src/context/`: Global state providers (`CartContext`).
+*   `src/data/`: Static data sources acting as a mock database.
+*   `src/utils/`: Helper functions (e.g., `ScrollToTop` to reset scroll position on route change).
+*   `src/assets/`: Images and static media.
+
+## 6. Future Roadmap (Backend Integration)
+While the current version is a polished frontend prototype, the architecture is designed to scale into a full-stack application (as documented in `Backend_Strategy.md`):
+*   **Authentication:** Integration with Firebase Auth for user accounts.
+*   **Database:** Migration from `products.js` to Firestore or MongoDB to manage inventory.
+*   **Payments:** Integration with Stripe or Razorpay for secure checkout processing.

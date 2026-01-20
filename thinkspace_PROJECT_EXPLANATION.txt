@@ -1,0 +1,68 @@
+# PROJECT OVERVIEW: THINKSPACE v2
+# "Fluid Intelligence" Workspace
+
+--------------------------------------------------------------------------------
+1. ELEVATOR PITCH (The "What")
+--------------------------------------------------------------------------------
+Thinkspace is a next-generation collaborative workspace that combines the freedom of an infinite whiteboard with the structure of a grid system. It is designed to feel like an "AI-native" tool—meaning it doesn't just wait for your input, but acts as an intelligent co-pilot that anticipates your needs.
+
+--------------------------------------------------------------------------------
+2. THE CORE PROBLEM & SOLUTION (The "Why")
+--------------------------------------------------------------------------------
+*   **Problem**: Creative work is messy (brainstorming), but execution is structured (design systems). Current tools usually force you to choose one: you either get a chaotic whiteboard (Miro) or a rigid design tool (Figma).
+*   **Solution**: "Fluid Intelligence." A workspace that supports both modes simultaneously. You have an infinite canvas for chaos, but a pervasive "Liquid Grid" that provides subtle structure when you need it.
+
+--------------------------------------------------------------------------------
+3. TECHNICAL ARCHITECTURE (The "How")
+--------------------------------------------------------------------------------
+*   **Framework**: React 19 + Vite (Fast development, modern features).
+*   **State Management**: React `useState` + `useRef` (for performance-critical canvas updates).
+*   **3D Rendering**: Three.js + @react-three/fiber (R3F). This is used for the background grid and 3D objects.
+*   **Animations**: Framer Motion (for smooth UI transitions and drag physics).
+*   **Styling**: TailwindCSS (utility-first styling) + Custom GLSL Shaders (for the grid effects).
+
+--------------------------------------------------------------------------------
+4. KEY FEATURES DEEP DIVE (Technical Talking Points)
+--------------------------------------------------------------------------------
+
+A. THE INFINITE CANVAS
+   *   **How it works**: The canvas is a single `motion.div` that we transform using CSS `translate` and `scale`.
+   *   **Coordinate System**: The hardest part is mapping "Screen Coordinates" (where your mouse is) to "Canvas Coordinates" (where the item should be inside the zoomed/panned world).
+   *   **The Math**: 
+       `CanvasX = (ScreenX - PanX) / Scale`
+       `CanvasY = (ScreenY - PanY) / Scale`
+   *   **Why this matters**: This ensures that when you zoom in on a specific point, the canvas expands from that point, not the top-left corner.
+
+B. THE LIQUID GRID (Custom Shader)
+   *   **Technology**: WebGL / GLSL Fragment Shader.
+   *   **Implementation**: Instead of drawing thousands of HTML lines (which would lag), we render a single plane in Three.js and use a shader to calculate the color of every pixel.
+   *   **The "Dot" Logic**: The shader divides the screen into a grid. Inside each cell, it calculates the distance to the center. If the distance is small, it draws a dot.
+   *   **Interaction**: We pass the mouse position (`uMouse`) as a "Uniform" variable to the GPU. The shader calculates the distance from the mouse to every pixel. If it's close, it makes the dot brighter and larger. This creates the "spotlight" effect with zero performance cost on the CPU.
+
+C. 3D OBJECT INTEGRATION
+   *   **Technology**: @react-three/drei (`Box3D`, `OrbitControls`).
+   *   **Innovation**: We are rendering 3D scenes *inside* 2D DOM elements. Each 3D card is its own mini-Canvas. This allows us to mix standard HTML UI (text, buttons) with rich 3D content seamlessly.
+
+D. AI CO-PILOT SIMULATION
+   *   **Concept**: The floating command bar mimics a CLI (Command Line Interface).
+   *   **Logic**: It uses regex matching to "predict" commands. In a real production app, this would be connected to an LLM (like OpenAI API) to generate actual code or designs based on the prompt.
+
+--------------------------------------------------------------------------------
+5. DESIGN PHILOSOPHY
+--------------------------------------------------------------------------------
+*   **"System" Aesthetic**: We used a monospace font (`JetBrains Mono`), uppercase labels (`OBJ_REF_#1`), and a terminal-like boot sequence to make the user feel like they are operating a complex machine, not just browsing a website.
+*   **Dark Mode First**: A deep black background (`#050505`) reduces eye strain and makes the "glowing" interactive elements pop.
+
+--------------------------------------------------------------------------------
+6. CHALLENGES YOU SOLVED
+--------------------------------------------------------------------------------
+*   **"Sliding to Infinity"**: Initially, the drag physics had too much momentum. You fixed this by disabling `dragMomentum` in Framer Motion to ensure precise control.
+*   **Zoom Context**: The browser wants to zoom the whole page (text, UI). You intercepted the `Ctrl+Scroll` event to only scale the canvas container, keeping the UI (sidebar, header) static.
+*   **Performance**: Using HTML for the background grid was too slow. You solved this by moving the grid rendering to the GPU using a custom shader.
+
+--------------------------------------------------------------------------------
+7. FUTURE ROADMAP (If asked "What's next?")
+--------------------------------------------------------------------------------
+*   **Real-time Collaboration**: Adding WebSockets (Socket.io) to see other users' cursors.
+*   **Real AI**: Connecting the command bar to an actual LLM to generate content.
+*   **Spatial Audio**: Adding sound effects based on where items are on the canvas.
