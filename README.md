@@ -14,7 +14,8 @@ This site is built with **zero external dependencies** (no React, no Tailwind, n
   - **Scrollytelling Layout**: Text and sections that reveal gracefully as you explore.
 
 ### ⚡ Performance & Logic
-- **Smart Loader**: A cinematic intro that plays once per session. Returns visits load instantly (`sessionStorage` logic + inline script optimization).
+- **Cinematic Loading Sequence**: A bespoke intro animation featuring multilingual greetings (Malayalam, Hindi, Japanese, etc.) and a signature slide-in using `Archivo Black`. Optimized with recursive timeouts for perfect timing.
+- **Smart Session Handling**: The intro plays once per session to respect the user's time.
 - **Live Local Time**: Real-time status indicator (Online/Snoozing) based on my local time zone (Asia/Kolkata).
 - **Theme Engine**: Robust Light/Dark mode toggle with persistent storage.
 
@@ -24,10 +25,9 @@ All project pages follow a consistent, premium "Design Engineer" aesthetic with 
 
 - **[Thinkspace](thinkspace.html)**: AI-Driven Interface Design.
 - **[VibeKit](vibekit.html)**: Motion & Microinteraction Library.
-- **[Forma](forma.html)**: Generative Design System.
 - **[Echo](echo.html)**: Voice Interface Prototype.
-- **[Flowforge](flowforge.html)**: React Component Playground.
-- **[Neonfolio](neonfolio.html)**: Next.js Portfolio Framework.
+- **[LeftOverLoops](leftoverloop.html)**: Sustainable Fashion Marketplace.
+- **[Jute & Co](jute-and-co.html)**: Artisanal eCommerce Platform.
 
 ## 🛠️ Technology Stack
 
