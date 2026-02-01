@@ -10,83 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (loaderScreen && !hasSeenIntro) {
     // First visit: Play Apple-style Greeting Animation
-    const greetings = [
-      "Hello",         // English
-      "നമസ്കാരം",   // Malayalam
-      "Hola",          // Spanish
-      "Bonjour",       // French
-      "Guten Tag",     // German
-      "こんにちは",    // Japanese
-      "नमस्ते"         // Hindi
-    ];
+    // Direct show with small delay for smoothness
+    setTimeout(() => {
+      const finalText = document.querySelector('.loader-final-text');
+      if (finalText) {
+        finalText.classList.add('show');
 
-    let i = 0;
-    const helloElement = document.querySelector('.loader-hello');
-    const intervalTime = 250; // Speed of cycling
-
-    // Initial show
-    if (helloElement) {
-      helloElement.textContent = greetings[0];
-      helloElement.classList.add('show');
-    }
-
-    // Function to handle the greeting cycle
-    // Function to handle the greeting cycle
-    function showNextGreeting() {
-      if (helloElement) {
-        // Fade out current greeting
-        helloElement.classList.remove('show');
-
-        // Wait for transition to finish (matches CSS 0.3s)
+        // Wait for reading time then exit
         setTimeout(() => {
-          i++;
+          // Fade out final text
+          finalText.style.opacity = '0';
+          finalText.style.transition = 'opacity 0.5s ease';
 
-          // Check if we reached the end
-          if (i >= greetings.length) {
-
-            // End greeting sequence
-            // Wait a moment after last fade out, then start finale
-            setTimeout(() => {
-
-              // Verify elements exist before accessing
-              const finalText = document.querySelector('.loader-final-text');
-
-              if (finalText) {
-                finalText.classList.add('show');
-
-                // Wait for reading time then exit
-                setTimeout(() => {
-                  // Fade out final text
-                  finalText.style.opacity = '0';
-                  finalText.style.transition = 'opacity 0.5s ease';
-
-                  setTimeout(() => {
-                    exitLoader();
-                  }, 500);
-                }, 2000); // 2 seconds reading time
-              } else {
-                // Fallback exit if elements missing
-                exitLoader();
-              }
-            }, 200);
-            return;
-          }
-
-          // Update text and fade in
-          helloElement.textContent = greetings[i];
-          helloElement.classList.add('show');
-
-          // Recursive call for next word
-          // 600ms hold time is very fast
-          setTimeout(showNextGreeting, 600);
-
-        }, 300); // Wait for fade out transition (300ms)
+          setTimeout(() => {
+            exitLoader();
+          }, 500);
+        }, 2500); // 2.5 seconds reading time
+      } else {
+        exitLoader();
       }
-    }
-
-    // Start the cycle
-    // "Hello" is already showing. We need to start fading it out after 1000ms (extra time for first word).
-    setTimeout(showNextGreeting, 1000);
+    }, 500); // Initial small delay
 
     function exitLoader() {
       if (loaderText) loaderText.classList.add('fade-out');
